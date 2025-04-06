@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 24.8.1.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { line-height: 115%; margin-bottom: 0.1in; background: transparent }
+		pre { background: transparent }
+		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		pre.cjk { font-family: "NSimSun", monospace; font-size: 10pt }
+		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre class="western">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Henry | <font face="NSimSun, monospace"><span lang="zh-CN">个人主页</span></font>&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css&quot;&gt;
+    &lt;style&gt;
+        :root {
+            --primary: #3a86ff;
+            --primary-light: #8bb8ff;
+            --secondary: #f8f9fa;
+            --dark: #212529;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --success: #28a745;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.15);
+            --radius: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: #fefefe;
+            overflow-x: hidden;
+        }
+        
+        @supports (font-variation-settings: normal) {
+            body { font-family: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
+        }
+        
+        ::selection {
+            background: var(--primary-light);
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* <font face="NSimSun, monospace"><span lang="zh-CN">头部样式 </span></font>*/
+        header {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #3a86ff 0%, #2667cc 100%);
+            color: white;
+            overflow: hidden;
+            padding: 2rem;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            margin-bottom: 1.5rem;
+        }
+        
+        .avatar:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, white, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nickname {
+            font-size: 1.5rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .motto {
+            font-size: 1.25rem;
+            font-style: italic;
+            margin: 1.5rem 0;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .motto::before, .motto::after {
+            content: '&quot;';
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.5);
+            position: absolute;
+        }
+        
+        .motto::before {
+            top: -15px;
+            left: -20px;
+        }
+        
+        .motto::after {
+            bottom: -25px;
+            right: -20px;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-20px) translateX(-50%); }
+            60% { transform: translateY(-10px) translateX(-50%); }
+        }
+        
+        /* <font face="NSimSun, monospace"><span lang="zh-CN">导航栏 </span></font>*/
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+        }
+        
+        nav.scrolled .nav-links a {
+            color: var(--dark);
+        }
+        
+        nav.scrolled .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        nav.scrolled .logo {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        nav.scrolled .nav-links a::after {
+            background: var(--primary);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* <font face="NSimSun, monospace"><span lang="zh-CN">主要内容 </span></font>*/
+        main {
+            padding: 5rem 0;
+        }
+        
+        section {
+            margin-bottom: 5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+            font-weight: 700;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--gray);
+        }
+        
+        /* <font face="NSimSun, monospace"><span lang="zh-CN">关于部分 </span></font>*/
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+        
+        .about-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .info-item {
+            background: var(--secondary);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+        
+        .info-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .info-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-item p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* <font face="NSimSun, monospace"><span lang="zh-CN">时间线 </span></font>*/
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--primary-light);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 50%;
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+            padding-right: 3rem;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 3rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            border: 4px solid var(--primary);
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::before {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even)::before {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .timeline-item:hover .timeline-content {
+            transform: scale(1.03);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .timeline-date {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-date {
+            float: right;
+        }
+        
+        .timeline-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* <font face="NSimSun, monospace"><span lang="zh-CN">兴趣部分 </span></font>*/
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .interest-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .interest-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary);
+        }
+        
+        .interest-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .interest-icon {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+            background: rgba(58, 134, 255, 0.1);
+        }
+        
+        .interest-body {
+            padding: 2rem;
+        }
+        
+        .interest-body h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .interest-body p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* <font face="NSimSun, monospace"><span lang="zh-CN">偶像部分 </span></font>- <font face="NSimSun, monospace"><span lang="zh-CN">更新为纯文字卡片 </span></font>*/
+        .idols-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .idol-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .idol-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary);
+        }
+        
+        .idol-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .idol-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .idol-card .idol-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .idol-card p {
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* <font face="NSimSun, monospace"><span lang="zh-CN">品牌部分 </span></font>- <font face="NSimSun, monospace"><span lang="zh-CN">使用提供的图片链接 </span></font>*/
+        .brands-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .brand-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 60px;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            padding: 1rem;
+        }
+        
+        .brand-item:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .brand-item img {
+            max-width: 100%;
+            max-height: 100%;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+        
+        .brand-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* <font face="NSimSun, monospace"><span lang="zh-CN">页脚 </span></font>*/
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 5rem 0 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+        
+        /* <font face="NSimSun, monospace"><span lang="zh-CN">响应式设计 </span></font>*/
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(odd), 
+            .timeline-item:nth-child(even) {
+                left: 0;
+                padding-left: 70px;
+                padding-right: 0;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(odd)::before, 
+            .timeline-item:nth-child(even)::before {
+                left: 20px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-date {
+                float: none;
+                margin-bottom: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transition: var(--transition);
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links a {
+                color: var(--dark);
+                font-size: 1.2rem;
+            }
+            
+            .hamburger {
+                display: block;
+                color: white;
+                font-size: 1.5rem;
+            }
+            
+            nav.scrolled .hamburger {
+                color: var(--dark);
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .motto {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .info-item {
+                grid-column: span 2;
+            }
+            
+            .interest-card, .idol-card {
+                grid-column: span 1;
+            }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- <font face="NSimSun, monospace"><span lang="zh-CN">导航栏 </span></font>--&gt;
+    &lt;nav id=&quot;navbar&quot;&gt;
+        &lt;div class=&quot;container nav-container&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;logo&quot;&gt;Henry&lt;/a&gt;
+            &lt;div class=&quot;hamburger&quot; id=&quot;hamburger&quot;&gt;
+                &lt;i class=&quot;fas fa-bars&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;nav-links&quot; id=&quot;navLinks&quot;&gt;
+                &lt;a href=&quot;#about&quot;&gt;<font face="NSimSun, monospace"><span lang="zh-CN">关于我</span></font>&lt;/a&gt;
+                &lt;a href=&quot;#education&quot;&gt;<font face="NSimSun, monospace"><span lang="zh-CN">学习经历</span></font>&lt;/a&gt;
+                &lt;a href=&quot;#interests&quot;&gt;<font face="NSimSun, monospace"><span lang="zh-CN">兴趣爱好</span></font>&lt;/a&gt;
+                &lt;a href=&quot;#idols&quot;&gt;<font face="NSimSun, monospace"><span lang="zh-CN">我的偶像</span></font>&lt;/a&gt;
+                &lt;a href=&quot;#brands&quot;&gt;<font face="NSimSun, monospace"><span lang="zh-CN">喜爱品牌</span></font>&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+    
+    &lt;!-- <font face="NSimSun, monospace"><span lang="zh-CN">头部 </span></font>--&gt;
+    &lt;header&gt;
+        &lt;div class=&quot;header-content&quot;&gt;
+            &lt;img src=&quot;https://lingjing-online.cdn.bcebos.com/v1/lingjing-online/datasets/2025-04-05/e7ea5bb3-e648-49b7-85d9-ae2950acbb86.jpeg&quot; alt=&quot;Henry<font face="NSimSun, monospace"><span lang="zh-CN">的头像</span></font>&quot; class=&quot;avatar&quot;&gt;
+            &lt;h1&gt;Henry&lt;/h1&gt;
+            &lt;p class=&quot;nickname&quot;&gt;<font face="NSimSun, monospace"><span lang="zh-CN">小猪</span></font>&lt;/p&gt;
+            &lt;p class=&quot;motto&quot;&gt;Stay hungry, stay foolish. —— <font face="NSimSun, monospace"><span lang="zh-CN">史蒂夫</span></font>·<font face="NSimSun, monospace"><span lang="zh-CN">乔布斯</span></font>&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;scroll-down&quot; id=&quot;scrollDown&quot;&gt;
+            &lt;i class=&quot;fas fa-chevron-down&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    
+    &lt;!-- <font face="NSimSun, monospace"><span lang="zh-CN">主要内容 </span></font>--&gt;
+    &lt;main class=&quot;container&quot;&gt;
+        &lt;!-- <font face="NSimSun, monospace"><span lang="zh-CN">关于我 </span></font>--&gt;
+        &lt;section id=&quot;about&quot;&gt;
+            &lt;div class=&quot;section-header&quot;&gt;
+                &lt;h2&gt;<font face="NSimSun, monospace"><span lang="zh-CN">关于我</span></font>&lt;/h2&gt;
+                &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">探索我的个性、兴趣和价值观</span></font>&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;about-content&quot;&gt;
+                &lt;div class=&quot;about-text&quot;&gt;
+                    &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">我是</span></font>Henry<font face="NSimSun, monospace"><span lang="zh-CN">，一名对技术和创新充满热情的高中生。我的</span></font>MBTI<font face="NSimSun, monospace"><span lang="zh-CN">性格类型是</span></font>INTJ<font face="NSimSun, monospace"><span lang="zh-CN">，这种性格特点使我善于战略思考和独立解决问题。</span></font>&lt;/p&gt;
+                    &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">目前就读于潮州市金山中学，选择了语文、数学、英语、物理、化学和地理作为我的主要学科。这些学科组合反映了我对理科学科的偏爱，同时也保持着对人文科学的兴趣。</span></font>&lt;/p&gt;
+                    &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">在课外，我担任学校覃思推理社魔术部的负责人，这培养了我的领导能力和表演技巧。</span></font>&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;about-info&quot;&gt;
+                    &lt;div class=&quot;info-item&quot;&gt;
+                        &lt;i class=&quot;fas fa-graduation-cap&quot;&gt;&lt;/i&gt;
+                        &lt;h3&gt;<font face="NSimSun, monospace"><span lang="zh-CN">教育背景</span></font>&lt;/h3&gt;
+                        &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">潮州市金山中学 </span></font>(2024-<font face="NSimSun, monospace"><span lang="zh-CN">至今</span></font>)&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;info-item&quot;&gt;
+                        &lt;i class=&quot;fas fa-magic&quot;&gt;&lt;/i&gt;
+                        &lt;h3&gt;<font face="NSimSun, monospace"><span lang="zh-CN">课外活动</span></font>&lt;/h3&gt;
+                        &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">覃思推理社魔术部负责人</span></font>&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;info-item&quot;&gt;
+                        &lt;i class=&quot;fas fa-brain&quot;&gt;&lt;/i&gt;
+                        &lt;h3&gt;MBTI<font face="NSimSun, monospace"><span lang="zh-CN">类型</span></font>&lt;/h3&gt;
+                        &lt;p&gt;INTJ (<font face="NSimSun, monospace"><span lang="zh-CN">建筑师型</span></font>)&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;info-item&quot;&gt;
+                        &lt;i class=&quot;fas fa-book&quot;&gt;&lt;/i&gt;
+                        &lt;h3&gt;<font face="NSimSun, monospace"><span lang="zh-CN">选科方向</span></font>&lt;/h3&gt;
+                        &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">理科为主，文理结合</span></font>&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        
+        &lt;!-- <font face="NSimSun, monospace"><span lang="zh-CN">学习经历 </span></font>--&gt;
+        &lt;section id=&quot;education&quot;&gt;
+            &lt;div class=&quot;section-header&quot;&gt;
+                &lt;h2&gt;<font face="NSimSun, monospace"><span lang="zh-CN">学习经历</span></font>&lt;/h2&gt;
+                &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">我的教育历程与成长轨迹</span></font>&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;timeline&quot;&gt;
+                &lt;div class=&quot;timeline-item&quot;&gt;
+                    &lt;div class=&quot;timeline-content&quot;&gt;
+                        &lt;span class=&quot;timeline-date&quot;&gt;2014 - 2020&lt;/span&gt;
+                        &lt;h3&gt;<font face="NSimSun, monospace"><span lang="zh-CN">潮州市城南小学</span></font>&lt;/h3&gt;
+                        &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">小学阶段打下了扎实的学习基础，培养了良好的学习习惯和广泛的兴趣爱好。</span></font>&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;timeline-item&quot;&gt;
+                    &lt;div class=&quot;timeline-content&quot;&gt;
+                        &lt;span class=&quot;timeline-date&quot;&gt;2020 - 2023&lt;/span&gt;
+                        &lt;h3&gt;<font face="NSimSun, monospace"><span lang="zh-CN">潮州市金山实验学校</span></font>&lt;/h3&gt;
+                        &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">初中阶段开始对科学和技术产生浓厚兴趣，参加了多个科技类课外活动。</span></font>&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;timeline-item&quot;&gt;
+                    &lt;div class=&quot;timeline-content&quot;&gt;
+                        &lt;span class=&quot;timeline-date&quot;&gt;2024 - <font face="NSimSun, monospace"><span lang="zh-CN">至今</span></font>&lt;/span&gt;
+                        &lt;h3&gt;<font face="NSimSun, monospace"><span lang="zh-CN">潮州市金山中学</span></font>&lt;/h3&gt;
+                        &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">高中阶段专注于理科学习，同时担任魔术部负责人，培养领导能力和团队协作精神。</span></font>&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        
+        &lt;!-- <font face="NSimSun, monospace"><span lang="zh-CN">兴趣爱好 </span></font>--&gt;
+        &lt;section id=&quot;interests&quot;&gt;
+            &lt;div class=&quot;section-header&quot;&gt;
+                &lt;h2&gt;<font face="NSimSun, monospace"><span lang="zh-CN">兴趣爱好</span></font>&lt;/h2&gt;
+                &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">探索我的热情所在与技能专长</span></font>&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;interests-grid&quot;&gt;
+                &lt;div class=&quot;interest-card&quot;&gt;
+                    &lt;div class=&quot;interest-icon&quot;&gt;
+                        &lt;i class=&quot;fas fa-robot&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;interest-body&quot;&gt;
+                        &lt;h3&gt;<font face="NSimSun, monospace"><span lang="zh-CN">人工智能</span></font>&lt;/h3&gt;
+                        &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">对机器学习、深度学习和</span></font>AI<font face="NSimSun, monospace"><span lang="zh-CN">应用开发有浓厚兴趣，持续关注最新技术发展。</span></font>&lt;/p&gt;
+                        &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">熟悉</span></font>Python<font face="NSimSun, monospace"><span lang="zh-CN">编程和基础机器学习算法，正在学习</span></font>TensorFlow<font face="NSimSun, monospace"><span lang="zh-CN">框架。</span></font>&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;interest-card&quot;&gt;
+                    &lt;div class=&quot;interest-icon&quot;&gt;
+                        &lt;i class=&quot;fas fa-laptop-code&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;interest-body&quot;&gt;
+                        &lt;h3&gt;<font face="NSimSun, monospace"><span lang="zh-CN">计算机科学</span></font>&lt;/h3&gt;
+                        &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">热爱编程和技术创新，掌握</span></font>HTML/CSS/JavaScript<font face="NSimSun, monospace"><span lang="zh-CN">基础，正在学习数据结构和算法。</span></font>&lt;/p&gt;
+                        &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">对</span></font>Web<font face="NSimSun, monospace"><span lang="zh-CN">开发和移动应用开发都有探索兴趣。</span></font>&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;interest-card&quot;&gt;
+                    &lt;div class=&quot;interest-icon&quot;&gt;
+                        &lt;i class=&quot;fas fa-hat-wizard&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;interest-body&quot;&gt;
+                        &lt;h3&gt;<font face="NSimSun, monospace"><span lang="zh-CN">魔术表演</span></font>&lt;/h3&gt;
+                        &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">作为魔术部负责人，精通多种近景魔术和舞台魔术技巧。</span></font>&lt;/p&gt;
+                        &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">魔术培养了我的表演能力、临场应变能力和观众互动技巧。</span></font>&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        
+        &lt;!-- <font face="NSimSun, monospace"><span lang="zh-CN">我的偶像 </span></font>- <font face="NSimSun, monospace"><span lang="zh-CN">更新为纯文字卡片 </span></font>--&gt;
+        &lt;section id=&quot;idols&quot;&gt;
+            &lt;div class=&quot;section-header&quot;&gt;
+                &lt;h2&gt;<font face="NSimSun, monospace"><span lang="zh-CN">我的偶像</span></font>&lt;/h2&gt;
+                &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">激励我前行的人物与榜样</span></font>&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;idols-grid&quot;&gt;
+                &lt;div class=&quot;idol-card&quot;&gt;
+                    &lt;h3&gt;<font face="NSimSun, monospace"><span lang="zh-CN">宋雨琦</span></font>&lt;/h3&gt;
+                    &lt;p class=&quot;idol-title&quot;&gt;<font face="NSimSun, monospace"><span lang="zh-CN">才华横溢的艺人</span></font>&lt;/p&gt;
+                    &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">宋雨琦是中国内地女歌手、舞者，</span></font>(G)I-DLE<font face="NSimSun, monospace"><span lang="zh-CN">组合成员。我欣赏她在音乐和舞蹈方面的多才多艺，以及她在国际舞台上的表现。</span></font>&lt;/p&gt;
+                    &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">她的专业态度和对艺术的执着追求激励着我在自己的领域中不断进步。</span></font>&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;idol-card&quot;&gt;
+                    &lt;h3&gt;<font face="NSimSun, monospace"><span lang="zh-CN">埃隆</span></font>·<font face="NSimSun, monospace"><span lang="zh-CN">马斯克</span></font>&lt;/h3&gt;
+                    &lt;p class=&quot;idol-title&quot;&gt;<font face="NSimSun, monospace"><span lang="zh-CN">科技创新者</span></font>&lt;/p&gt;
+                    &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">埃隆</span></font>·<font face="NSimSun, monospace"><span lang="zh-CN">马斯克是特斯拉、</span></font>SpaceX<font face="NSimSun, monospace"><span lang="zh-CN">等多家高科技公司的创始人。我钦佩他对未来科技的远见和改变世界的决心。</span></font>&lt;/p&gt;
+                    &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">他在电动汽车、太空探索和可再生能源等领域的创新精神，激发了我对科技的热情。</span></font>&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;idol-card&quot;&gt;
+                    &lt;h3&gt;<font face="NSimSun, monospace"><span lang="zh-CN">雷军</span></font>&lt;/h3&gt;
+                    &lt;p class=&quot;idol-title&quot;&gt;<font face="NSimSun, monospace"><span lang="zh-CN">企业家</span></font>&lt;/p&gt;
+                    &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">雷军是小米科技的创始人兼</span></font>CEO<font face="NSimSun, monospace"><span lang="zh-CN">。我欣赏他从工程师到成功企业家的转型历程。</span></font>&lt;/p&gt;
+                    &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">他</span></font>&quot;<font face="NSimSun, monospace"><span lang="zh-CN">专注、极致、口碑、快</span></font>&quot;<font face="NSimSun, monospace"><span lang="zh-CN">的七字诀商业理念，以及小米</span></font>&quot;<font face="NSimSun, monospace"><span lang="zh-CN">让每个人都能享受科技的乐趣</span></font>&quot;<font face="NSimSun, monospace"><span lang="zh-CN">的使命，都对我有很大的启发。</span></font>&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        
+        &lt;!-- <font face="NSimSun, monospace"><span lang="zh-CN">喜爱品牌 </span></font>- <font face="NSimSun, monospace"><span lang="zh-CN">使用提供的图片链接 </span></font>--&gt;
+        &lt;section id=&quot;brands&quot;&gt;
+            &lt;div class=&quot;section-header&quot;&gt;
+                &lt;h2&gt;<font face="NSimSun, monospace"><span lang="zh-CN">喜爱品牌</span></font>&lt;/h2&gt;
+                &lt;p&gt;<font face="NSimSun, monospace"><span lang="zh-CN">我欣赏的品牌与科技公司</span></font>&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;brands-container&quot;&gt;
+                &lt;div class=&quot;brand-item&quot;&gt;
+                    &lt;img src=&quot;https://lingjing-online.cdn.bcebos.com/v1/lingjing-online/datasets/2025-04-05/db2d881b-7de4-4cca-a94a-02a3564ff9bc.png&quot; alt=&quot;Tesla&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;brand-item&quot;&gt;
+                    &lt;img src=&quot;https://lingjing-online.cdn.bcebos.com/v1/lingjing-online/datasets/2025-04-05/db61cc68-efdf-410d-a665-814fe4b86f53.jpeg&quot; alt=&quot;Xiaomi&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;brand-item&quot;&gt;
+                    &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/NIO_logo.png/800px-NIO_logo.png&quot; alt=&quot;NIO&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;brand-item&quot;&gt;
+                    &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Xpeng_logo.png/800px-Xpeng_logo.png&quot; alt=&quot;XPeng&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;brand-item&quot;&gt;
+                    &lt;img src=&quot;https://lingjing-online.cdn.bcebos.com/v1/lingjing-online/datasets/2025-04-05/eafb8568-eb1a-4094-bd28-30dc7c9bdeeb.jpeg&quot; alt=&quot;Google&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;brand-item&quot;&gt;
+                    &lt;img src=&quot;https://lingjing-online.cdn.bcebos.com/v1/lingjing-online/datasets/2025-04-05/dab9ef1a-c5f6-4412-a80e-a9a43650760e.png&quot; alt=&quot;Apple&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;brand-item&quot;&gt;
+                    &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/1280px-OpenAI_Logo.svg.png&quot; alt=&quot;OpenAI&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    
+    &lt;!-- <font face="NSimSun, monospace"><span lang="zh-CN">页脚 </span></font>--&gt;
+    &lt;footer&gt;
+        &lt;div class=&quot;container footer-content&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;footer-logo&quot;&gt;Henry&lt;/a&gt;
+            &lt;div class=&quot;footer-links&quot;&gt;
+                &lt;a href=&quot;#about&quot;&gt;<font face="NSimSun, monospace"><span lang="zh-CN">关于</span></font>&lt;/a&gt;
+                &lt;a href=&quot;#education&quot;&gt;<font face="NSimSun, monospace"><span lang="zh-CN">经历</span></font>&lt;/a&gt;
+                &lt;a href=&quot;#interests&quot;&gt;<font face="NSimSun, monospace"><span lang="zh-CN">兴趣</span></font>&lt;/a&gt;
+                &lt;a href=&quot;#idols&quot;&gt;<font face="NSimSun, monospace"><span lang="zh-CN">偶像</span></font>&lt;/a&gt;
+                &lt;a href=&quot;#brands&quot;&gt;<font face="NSimSun, monospace"><span lang="zh-CN">品牌</span></font>&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;social-links&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fab fa-github&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fab fa-linkedin&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fab fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;copyright&quot;&gt;© 2024 Henry<font face="NSimSun, monospace"><span lang="zh-CN">的个人主页</span></font>. <font face="NSimSun, monospace"><span lang="zh-CN">保留所有权利</span></font>.&lt;br&gt;<font face="NSimSun, monospace"><span lang="zh-CN">求知若饥，虚心若愚</span></font>&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+    
+    &lt;script&gt;
+        // <font face="NSimSun, monospace"><span lang="zh-CN">导航栏滚动效果</span></font>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY &gt; 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // <font face="NSimSun, monospace"><span lang="zh-CN">滚动到内容</span></font>
+        document.getElementById('scrollDown').addEventListener('click', function() {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+        
+        // <font face="NSimSun, monospace"><span lang="zh-CN">导航栏汉堡菜单</span></font>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+        
+        // <font face="NSimSun, monospace"><span lang="zh-CN">关闭菜单当点击链接</span></font>
+        document.querySelectorAll('.nav-links a').forEach(link =&gt; {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // <font face="NSimSun, monospace"><span lang="zh-CN">滚动动画</span></font>
+        function checkVisibility() {
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section =&gt; {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (sectionTop &lt; windowHeight * 0.75) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkVisibility);
+        window.addEventListener('load', checkVisibility);
+        
+        // <font face="NSimSun, monospace"><span lang="zh-CN">平滑滚动</span></font>
+        document.querySelectorAll('a[href^=&quot;#&quot;]').forEach(anchor =&gt; {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</body>
+</html>
